@@ -90,13 +90,12 @@
 /*!***********************************!*\
   !*** ./src/components/counter.js ***!
   \***********************************/
-/*! exports provided: Text, Infoequip */
+/*! exports provided: Text */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Text", function() { return Text; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Infoequip", function() { return Infoequip; });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -140,6 +139,22 @@ export const CounterS = () => {
 };
 */
 
+/***/ }),
+
+/***/ "./src/components/equips.js":
+/*!**********************************!*\
+  !*** ./src/components/equips.js ***!
+  \**********************************/
+/*! exports provided: Infoequip */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Infoequip", function() { return Infoequip; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
 const Infoequip = ({
   opcions,
   equip,
@@ -148,9 +163,7 @@ const Infoequip = ({
   incPunts,
   decPunts
 }) => {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Text, {
-    text: equip.nom
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Estadistiques del equip:"), opcions.map(({
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Estadistiques del equip:"), opcions.map(({
     value,
     label
   }) => Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
@@ -161,7 +174,7 @@ const Infoequip = ({
       incPunts();
       incPartits();
     }
-  }, " Juga i guanya partit "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+  }, "Juga i guanya partit + punt"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
     onClick: decPunts
   }, " Penalitza punt"));
 };
@@ -180,8 +193,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_counter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/counter */ "./src/components/counter.js");
+/* harmony import */ var _components_equips__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/equips */ "./src/components/equips.js");
 
 // Import dependencies
+
 
  //Declaració de variables
 
@@ -256,7 +271,7 @@ function refresh() {
     value: id,
     label: nom
   }));
-  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["render"])(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components_counter__WEBPACK_IMPORTED_MODULE_1__["Infoequip"], {
+  Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["render"])(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components_equips__WEBPACK_IMPORTED_MODULE_2__["Infoequip"], {
     opcions: opcions,
     equip: equip,
     setEquip: setEquipActiu,

@@ -1,6 +1,8 @@
 // Import dependencies
 import { render } from '@wordpress/element';
-import { Counter, CounterS, Text, Infoequip } from './components/counter';
+import { Counter, CounterS, Text} from './components/counter';
+import { Infoequip } from './components/equips';
+
 
 //Declaració de variables
 let estat = {
