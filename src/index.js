@@ -1,10 +1,18 @@
 // Import dependencies
 import { render } from '@wordpress/element';
-import { Counter, CounterS, Text} from './components/counter';
-import { Infoequip } from './components/equips';
+import './store';
+import { CounterList } from './components/counter-list';
 
+// import { Infoequip } from './components/equips';
+
+
+
+
+/*
 
 //Declaració de variables
+let value = 0;
+
 let estat = {
 	equipActiu: 'yyy',
 	equips: {
@@ -49,6 +57,11 @@ function setPunts( punts ) {
 	refresh();
 }
 
+function setValue( newValue ) {
+  value = newValue;
+  refresh();
+}
+
 // Render component in DOM
 const wrapper = document.getElementById( 'react-example-wrapper' );
 function refresh() {
@@ -57,6 +70,7 @@ function refresh() {
 		value: id,
 		label: nom,
 	} ) );
+
 	render(
 		<div>
 			<Infoequip
@@ -67,8 +81,21 @@ function refresh() {
 				incPunts={ () => setPunts( equip.punts + 1 ) }
 				decPunts={ () => setPunts( equip.punts - 1 ) }
 			/>
-		</div>,
+		</div>
+
+		<Counter
+			value={ value }
+			onIncrease={ () => setValue( value + 1 ) }
+			onDecrease={ () => setValue( value - 1 ) }
+		/>
+		,
 		wrapper
 	);
+
 }
 refresh();
+*/
+
+// Render component in DOM
+const wrapper = document.getElementById( 'react-example-wrapper' );
+render( <CounterList />, wrapper );
