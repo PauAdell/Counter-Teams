@@ -5,9 +5,6 @@ import { CounterList } from './components/counter-list';
 
 // import { Infoequip } from './components/equips';
 
-
-
-
 /*
 
 //Declaració de variables

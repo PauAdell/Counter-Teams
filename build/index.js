@@ -947,16 +947,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Basic = () => {
-  const counterIds = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__["useSelect"])(select => {
-    return select('react-example/counters').getCounterIds();
-  }, []);
+  const counterIds = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__["useSelect"])(select => select('react-example/counters').getCounterIds());
   const {
     addCounter
   } = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])('react-example/counters');
 
-  const afegircomptador = () => {
-    addCounter(Object(uuid__WEBPACK_IMPORTED_MODULE_2__["v4"])());
-  };
+  const afegircomptador = () => addCounter(Object(uuid__WEBPACK_IMPORTED_MODULE_2__["v4"])());
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, counterIds.map(id => Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_counter__WEBPACK_IMPORTED_MODULE_3__["default"], {
     key: id,
@@ -990,25 +986,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Counter = ({
-  counterId,
-  value
+  counterId
 }) => {
+  const value = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["useSelect"])(select => select('react-example/counters').getCounterValue(counterId));
   const {
     removeCounter,
     setCounterValue
   } = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])('react-example/counters');
 
-  const onIncrease = () => {
-    setCounterValue(counterId, value + 1);
-  };
+  const onIncrease = () => setCounterValue(counterId, value + 1);
 
-  const onDecrease = () => {
-    setCounterValue(counterId, value - 1);
-  };
+  const onDecrease = () => setCounterValue(counterId, value - 1);
 
-  const onDelete = () => {
-    removeCounter(counterId);
-  };
+  const onDelete = () => removeCounter(counterId);
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Counter: ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, value)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
     onClick: onIncrease
@@ -1019,17 +1009,7 @@ const Counter = ({
   }, "Delete"));
 };
 
-const withValue = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["withSelect"])((select, {
-  counterId
-}) => {
-  const {
-    getCounterValue
-  } = select('react-example/counters');
-  return {
-    value: getCounterValue(counterId)
-  };
-});
-/* harmony default export */ __webpack_exports__["default"] = (withValue(Counter));
+/* harmony default export */ __webpack_exports__["default"] = (Counter);
 /*
 export const Counter = ( { count, setCount } ) => {
   return (
