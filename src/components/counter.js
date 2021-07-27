@@ -1,7 +1,7 @@
 import { compose } from '@wordpress/compose';
 import { useSelect, useDispatch } from '@wordpress/data';
 
-const Counter = ( { counterId } ) => {
+export const Counter = ( { counterId } ) => {
 	const value = useSelect( ( select ) =>
 		select( 'react-example/counters' ).getCounterValue( counterId )
 	);
@@ -23,40 +23,3 @@ const Counter = ( { counterId } ) => {
 		</div>
 	);
 };
-
-export default Counter;
-/*
-export const Counter = ( { count, setCount } ) => {
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Suma
-      </button>
-      <button onClick={() => setCount(count - 1)}>
-        Resta
-      </button>
-    </div>
-  );
-};
-*/
-
-/*
-export const CounterS = () => {
-
-  const [ state, setState ]= useState( {valor : 3, nom: 'Pau'} );
-  return (
-    <div>
-      <p>You clicked {state.valor} times. Hola, {state.nom} </p>
-      <button onClick={() => {
-        setState( {
-          ...state,
-          valor : state.valor + 1 });
-        
-      }}>
-        Suma
-      </button>
-    </div>
-  );
-};
-*/

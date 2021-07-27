@@ -1,8 +1,8 @@
 import { useSelect, useDispatch } from '@wordpress/data';
 import { v4 as uuid } from 'uuid';
-import Counter from './counter';
+import { Counter } from './counter';
 
-const Basic = () => {
+export const CounterList = () => {
 	const counterIds = useSelect( ( select ) =>
 		select( 'react-example/counters' ).getCounterIds()
 	);
@@ -19,5 +19,3 @@ const Basic = () => {
 		</div>
 	);
 };
-
-export const CounterList = Basic;

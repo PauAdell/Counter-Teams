@@ -945,8 +945,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-const Basic = () => {
+const CounterList = () => {
   const counterIds = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__["useSelect"])(select => select('react-example/counters').getCounterIds());
   const {
     addCounter
@@ -954,7 +953,7 @@ const Basic = () => {
 
   const afegircomptador = () => addCounter(Object(uuid__WEBPACK_IMPORTED_MODULE_2__["v4"])());
 
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, counterIds.map(id => Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_counter__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, counterIds.map(id => Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_counter__WEBPACK_IMPORTED_MODULE_3__["Counter"], {
     key: id,
     counterId: id
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
@@ -962,26 +961,24 @@ const Basic = () => {
   }, "Add Counter"));
 };
 
-const CounterList = Basic;
-
 /***/ }),
 
 /***/ "./src/components/counter.js":
 /*!***********************************!*\
   !*** ./src/components/counter.js ***!
   \***********************************/
-/*! exports provided: default */
+/*! exports provided: Counter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Counter", function() { return Counter; });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
 /* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
-
 
 
 
@@ -1009,43 +1006,6 @@ const Counter = ({
   }, "Delete"));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Counter);
-/*
-export const Counter = ( { count, setCount } ) => {
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Suma
-      </button>
-      <button onClick={() => setCount(count - 1)}>
-        Resta
-      </button>
-    </div>
-  );
-};
-*/
-
-/*
-export const CounterS = () => {
-
-  const [ state, setState ]= useState( {valor : 3, nom: 'Pau'} );
-  return (
-    <div>
-      <p>You clicked {state.valor} times. Hola, {state.nom} </p>
-      <button onClick={() => {
-        setState( {
-          ...state,
-          valor : state.valor + 1 });
-        
-      }}>
-        Suma
-      </button>
-    </div>
-  );
-};
-*/
-
 /***/ }),
 
 /***/ "./src/index.js":
@@ -1065,96 +1025,7 @@ __webpack_require__.r(__webpack_exports__);
 // Import dependencies
 
 
- // import { Infoequip } from './components/equips';
-
-/*
-
-//Declaració de variables
-let value = 0;
-
-let estat = {
-	equipActiu: 'yyy',
-	equips: {
-		xxx: { id: 'xxx', nom: 'CapriSun', partits: 1, punts: 0 },
-		yyy: { id: 'yyy', nom: 'Pistacho', partits: 3, punts: 2 },
-		zzz: { id: 'zzz', nom: 'Baguette', partits: 2, punts: 1 },
-		www: { id: 'www', nom: 'hola', partits: 2, punts: 1 },
-	},
-};
-
-//Funcions
-function setEquipActiu( equipActiu ) {
-	estat = { ...estat, equipActiu };
-	refresh();
-}
-
-function setPartits( partits ) {
-	estat = {
-		...estat,
-		equips: {
-			...estat.equips,
-			[ estat.equipActiu ]: {
-				...estat.equips[ estat.equipActiu ],
-				partits,
-			},
-		},
-	};
-	refresh();
-}
-
-function setPunts( punts ) {
-	estat = {
-		...estat,
-		equips: {
-			...estat.equips,
-			[ estat.equipActiu ]: {
-				...estat.equips[ estat.equipActiu ],
-				punts,
-			},
-		},
-	};
-	refresh();
-}
-
-function setValue( newValue ) {
-  value = newValue;
-  refresh();
-}
-
-// Render component in DOM
-const wrapper = document.getElementById( 'react-example-wrapper' );
-function refresh() {
-	const equip = estat.equips[ estat.equipActiu ];
-	const opcions = Object.values( estat.equips ).map( ( { id, nom } ) => ( {
-		value: id,
-		label: nom,
-	} ) );
-
-	render(
-		<div>
-			<Infoequip
-				opcions={ opcions }
-				equip={ equip }
-				setEquip={ setEquipActiu }
-				incPartits={ () => setPartits( equip.partits + 1 ) }
-				incPunts={ () => setPunts( equip.punts + 1 ) }
-				decPunts={ () => setPunts( equip.punts - 1 ) }
-			/>
-		</div>
-
-		<Counter
-			value={ value }
-			onIncrease={ () => setValue( value + 1 ) }
-			onDecrease={ () => setValue( value - 1 ) }
-		/>
-		,
-		wrapper
-	);
-
-}
-refresh();
-*/
-// Render component in DOM
+ // Render component in DOM
 
 const wrapper = document.getElementById('react-example-wrapper');
 Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["render"])(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components_counter_list__WEBPACK_IMPORTED_MODULE_2__["CounterList"], null), wrapper);
